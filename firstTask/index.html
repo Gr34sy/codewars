@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 zad</title>
+    <script async defer src="./script.js"></script>
+</head>
+<body>
+    <p>Siema</p>
+    <button onClick="unique_in_order('asdasdsd')">1</button>
+    <button onClick="unique_in_order(['a', 's', 'd', 'a', 's', 'd', 's', 'd'])">2</button>
+
+    <br>
+    <button onClick="unique_in_order_2('AAAABBBCCDAABBB')"> oneliner 1</button>
+    <button onClick="unique_in_order_2(['A', 'B', 'C', 'D', 'A', 'B' ])">oneliner 2</button>
+
+    <br>
+    <button onClick="unique_in_order_2('Asdasdsd')"> oneliner 3</button>
+    <button onClick="unique_in_order_2(['A', 's', 'd', 'a', 's', 'd', 's', 'd'])">oneliner 4</button>
+
+    <br>
+    <button onClick="console.log(unique_in_order_3('Asdasdsd'))"> without new  Set 1</button>
+    <button onClick="console.log(unique_in_order_3(['A', 's', 'd', 'a', 's', 'd', 's', 'd']))">without new  Set 2</button>
+
+    <br>
+    <button onClick="console.log(correct('Asdasdsd'))"> without new  Set 1</button>
+    <button onClick="console.log(correct(['A', 's', 'd', 'a', 's', 'd', 's', 'd']))">without new  Set 2</button>
+</body>
+</html>
