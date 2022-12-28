@@ -24,5 +24,16 @@ const unique_in_order_3 = (seq) => {
 
 //4 correct solution - cuts off only duplicates that are next to each other 
 const correct = (seq) => {
-    
+    const tab = [...seq];
+    let similar = null;
+    filteredTab = [];
+
+    tab.forEach((el) => {
+        if(el!=similar){
+            filteredTab.push(el);
+        }
+        return similar = el;
+    })
+
+    return filteredTab;
 }
