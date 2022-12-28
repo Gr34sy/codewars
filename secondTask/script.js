@@ -11,3 +11,5 @@ function validatePIN (pin) {
 
 // 2 oneliner
 const validatePINo = (pin) => (pin.length===4 || pin.length===6) && [...pin].every(el => '0123456789'.includes(el)) ? true : false;
+ 
+//sdsd
