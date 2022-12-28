@@ -37,3 +37,6 @@ const correct = (seq) => {
 
     return filteredTab;
 }
+
+//5 correct oneliner
+const correctOneliner = (seq) => [...seq].filter((el, i ,ar) => ar[i] !== ar[i+1]);
