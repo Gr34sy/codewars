@@ -17,3 +17,7 @@ const  shortcutO = (str) => str.replace(/[aeiou]/g,'');
 
 //3 oneliner which works both on lowercase and uppercase characters
 const  shortcutOB = (str) => str.replace(/[aeiou]/gi,'');
+
+// the "/[aeiou]/"  is regExp (regular expression) and "gi" are modifiers
+// g - global
+// i - insensitive (means both upper and lowercase)
