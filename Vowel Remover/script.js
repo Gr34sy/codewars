@@ -13,3 +13,7 @@ function shortcut(string){
 
 //2 oneliner 
 const  shortcutO = (str) => str.replace(/[aeiou]/g,'');
+
+
+//3 oneliner which works both on lowercase and uppercase characters
+const  shortcutOB = (str) => str.replace(/[aeiou]/gi,'');
