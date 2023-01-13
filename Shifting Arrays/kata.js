@@ -1,17 +1,19 @@
-const theShift = (arrays, shift) => {
+const theShift = (arrays,shift) => {
     let agregated = [...arrays[0]];
    
-    for(i=1; i < arrays.length; i++){
-       for(j = 0+shift; j < arrays[i].length; j++){
-        if(agregated[j]){
-            agregated[j] =+ arrays[i][j];
+    for(let i=1; i < arrays.length; i++){
+       console.log('blyb');
+       for(let j = 0; j < arrays[i].length; j++){
+        if(agregated[j+shift]){
+            agregated[j+shift] += arrays[i][j];
+            console.log('blob');
         }else{
             agregated.push(arrays[i][j]);
         }
-       }
+      }
     }
 
     return agregated;
 }
 
-console.log(theShift([[1,1],[2,2]]))
+console.log(theShift([[1,1,1],[2,2,3]],2))
