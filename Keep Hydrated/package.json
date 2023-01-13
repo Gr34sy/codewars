@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "variables": "nodemon src/tworzenie-zmiennych.js",
-    "primaries": "nodemon src/typy-podstawowe.js",
-    "objects": "nodemon src/obiekty.js"
+    "zadanie": "nodemon ./zadanie.js"
   },
   "author": "",
   "license": "ISC",
