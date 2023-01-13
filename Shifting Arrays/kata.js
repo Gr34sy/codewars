@@ -1,4 +1,4 @@
-const theShift = (arrays,shift) => {
+const theShift = (arrays,shift = 0) => {
     let agregated = [...arrays[0]];
    
     for(let i=1; i < arrays.length; i++){
@@ -16,4 +16,4 @@ const theShift = (arrays,shift) => {
     return agregated;
 }
 
-console.log(theShift([[1,1,1],[2,2,3]],2))
+console.log(theShift([[1, 2, 3, 4, 5, 6], [7, 7, 7, -7, 7, 7],[1, 1, 1, 1, 1, 1]],3))
