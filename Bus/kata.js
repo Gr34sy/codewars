@@ -8,6 +8,8 @@ function number(arrays){
     return result;
 }
 
+const reducing = (arrays) => arrays.reduce((acc, value) => acc + (value[0]-value[1]), 0)
 
+console.log(reducing([[10,0],[3,5],[5,8]]))
 
-console.log(number([[10,0],[3,5],[5,8]]))
+// console.log(number([[10,0],[3,5],[5,8]]))
