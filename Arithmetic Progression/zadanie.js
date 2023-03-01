@@ -1,12 +1,15 @@
-// Nathan loves cycling.
+// In your class, you have started lessons about arithmetic progression. Since you are also a programmer, you have decided to write a function that will return the first n elements of the sequence with the given common difference d and first element a. Note that the difference may be zero!
+// The result should be a string of numbers, separated by comma and space.
 
-// Because Nathan knows it is important to stay hydrated, he drinks 0.5 litres of water per hour of cycling.
+function arithmeticSequenceElements(start , diff, length){
+    const words = [start];
 
-// You get given the time in hours and you need to return the number of litres Nathan will drink, rounded to the smallest value.
+    for(i = 1; i < length; i++){
+        const word = start + (i*diff);
+        words.push(word);
+    }
 
-const hydration = (time) => Math.floor(time * 0.5)
+    return words.join(', ');
+}
 
-console.log(hydration(1))
-console.log(hydration(3))
-console.log(hydration(6))
-console.log(hydration(2.5))
+console.log(arithmeticSequenceElements(1,2,5));
