@@ -1,0 +1,15 @@
+{
+  "name": "zadanie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "zadanie1": "nodemon ./zadanie1.js",
+    "zadanie2": "nodemon ./zadanie2.js",
+    "zadanie3": "nodemon ./zadanie3.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
