@@ -9,7 +9,7 @@ function deleteFive(int){
         intTab.splice(digitToRemove,1);
     }
 
-    return Number(intTab.join('')) != 0 ? intTab.join('') : 0;
+    return Number(intTab.join('')) != 0 ? Number(intTab.join('')) : 0;
 }
 
 console.log(deleteFive(15958));
