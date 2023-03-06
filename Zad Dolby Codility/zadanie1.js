@@ -1,17 +1,34 @@
-function deleteFive(int){
-    const intTab = [...int.toString()];
+//losowe litery
+function randomStr(){
+    const chars = 'abcdefghijklmnopqrstuvwxyz';
+    const charLength = chars.length;
 
-    if(int<0){
-        const digitToRemove = intTab.lastIndexOf('5');
-        intTab.splice(digitToRemove,1);
-    }else{
-        const digitToRemove = intTab.indexOf('5');
-        intTab.splice(digitToRemove,1);
-    }
-
-    return Number(intTab.join('')) != 0 ? intTab.join('') : 0;
+    return chars.charAt(Math.floor(Math.random() * charLength));
 }
 
-console.log(deleteFive(15958));
-console.log(deleteFive(-5859));
-console.log(deleteFive(-5000));
+//zad
+function palindrome(str){
+    if(typeof str != 'string') return;
+
+    const strTab = [...str.toLowerCase()];
+
+    strTab.forEach((el, i, arr) => {
+        if(el === '?'){
+            const oppositeIndex = arr.length-i-1;
+
+            const replacer = arr[oppositeIndex] != '?' ?  arr[oppositeIndex] : randomStr();
+
+            arr[oppositeIndex] = replacer;
+            arr[i] = replacer;
+        }
+    })
+
+    return strTab.join('') == strTab.reverse().join('')  ? strTab.join('') : 'NO';
+}   
+
+
+console.log(palindrome('?ab??a'));
+console.log(palindrome('bab??a'));
+console.log(palindrome('?a?'));
+
+console.log(palindrome('za??xz'));
