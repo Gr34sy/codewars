@@ -25,7 +25,7 @@
 
 //beta version
 function digPow(n, p){
-    const digits = [...n.toString()]
+    const digits = n.toString().split('')
 
     const result = digits.map((el, i) => {
         return Math.pow(el, p+i)
@@ -36,7 +36,6 @@ function digPow(n, p){
 }
 
 console.group('solution');
-console.log(digPow(89,1));
 console.log(digPow(89, 1));
 console.log(digPow(92, 1));
 console.log(digPow(695, 2));
@@ -44,4 +43,11 @@ console.log(digPow(46288, 3));
 console.groupEnd('solution');
 
 
+const oneliner = (n, p) => n.toString().split('').reduce((acc, el, i) => acc + Math.pow(el, p + i),0) % 2 ? -1 : n.toString().split('').reduce((acc, el, i) => acc + Math.pow(el, p + i),0) / n;
 
+console.group('solution Oneliner');
+console.log(oneliner(89, 1));
+console.log(oneliner(92, 1));
+console.log(oneliner(695, 2));
+console.log(oneliner(46288, 3));
+console.groupEnd('solution Oneliner');
