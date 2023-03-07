@@ -35,10 +35,13 @@ function digPow(n, p){
     return result % n  === 0 ? result/n : -1 ;
 }
 
+console.group('solution');
 console.log(digPow(89,1));
 console.log(digPow(89, 1));
 console.log(digPow(92, 1));
 console.log(digPow(695, 2));
 console.log(digPow(46288, 3));
+console.groupEnd('solution');
 
-// oneliner
+
+
