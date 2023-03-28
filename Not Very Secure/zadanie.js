@@ -20,3 +20,5 @@ console.log(alphanumeric("A a"));
 console.log(alphanumeric(""));
 console.log(alphanumeric("Adqaerq_"));
 console.log(alphanumeric("Adqaerq1"));
+
+let alphanumericOneliner = string => /^[a-z\d]+$/i.test(string);
