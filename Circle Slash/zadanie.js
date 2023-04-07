@@ -24,22 +24,29 @@
 
 
 // works but not for big input integers
+// function circleSlash(n) {
+//     const ppl = [];
+
+//     for( i = 1; i <=n; i++){
+//         ppl.push(i);
+//     }
+
+//     while(ppl.length > 1 ){
+//       ppl.forEach((el, i, arr) => {
+//        i+1 >= arr.length ? arr.shift() : arr.splice(i+1,1);
+//        console.log(arr);
+//       });
+//     }
+    
+//     return ppl[0];
+    
+// }
+
 function circleSlash(n) {
-    const ppl = [];
-
-    for( i = 1; i <=n; i++){
-        ppl.push(i);
-    }
-
-    while(ppl.length > 1 ){
-      ppl.forEach((el, i, arr) => {
-       i+1 >= arr.length ? arr.shift() : arr.splice(i+1,1);
-       console.log(arr);
-      });
-    }
-    
-    return ppl[0];
-    
+  return n === 1 ? 1 :
+    n % 2 ?
+      2 * circleSlash((n - 1) / 2) + 1
+    : 2 * circleSlash(n / 2) - 1
 }
 
 console.log(circleSlash(5));
