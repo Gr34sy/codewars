@@ -37,19 +37,7 @@
 // The number of ways to get exactly 3 details.
 
 function threeDetails(n) {
-  const odd = [];
-  const even = [];
-
-  for(i=1; i <= n; i++){
-    if(i % 2 != 0){
-      odd.push(i)
-    }else{
-      even.push(i)
-    }
-  }
-
-  console.log(odd);
-  console.log(even);
+  
 }
 
 threeDetails(7);
