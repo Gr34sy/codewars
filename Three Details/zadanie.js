@@ -37,7 +37,20 @@
 // The number of ways to get exactly 3 details.
 
 function threeDetails(n) {
-  
+    if (n < 3) 
+      return 0;
+      
+    if (n === 3) 
+      return 1;
+    
+    let m = n / 2 | 0;
+      
+    if (n % 2 === 0)
+      return 2 * threeDetails(m);
+      
+    return threeDetails(m + 1) 
+         + threeDetails(m);
 }
 
-threeDetails(7);
+console.log(threeDetails(7));
+console.log(threeDetails(6));
