@@ -19,9 +19,13 @@ function beeramid(bonus, price){
   let levels = 0;
   let i = 1;
 
-  while(Math.pow(i, 2) < cans_left){
+  while(Math.pow(i, 2) <= cans_left){
     levels += 1;
     cans_left = cans_left - Math.pow(i, 2);
     i++;
   }
+
+  return levels;
 }
+
+console.log(beeramid(10,2))
