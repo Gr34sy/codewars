@@ -1,0 +1,13 @@
+{
+  "name": "kata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "kata": "nodemon ./kata.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
