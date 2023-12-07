@@ -14,42 +14,119 @@
 // [7, 8, 3], [6, 1, 5, 4, 2], and others.
 // For n = 9 it is not possible. For example, try [6, 8, 9] and [1, 2, 3, 4, 5, 7], but the first sums to 23 and the second to 22. No other sets work either.
 
+
+//solution 1
 function createTwoSetsOfEqualSum(n) {
   // Divide the numbers 1,2,...,n into two sets/arrays of equal sum.
   // If it's not possible, return [].
 
-  return [];
-}
+  const sumOfSeq = (1+n)/2 * n
+  const halfSumOfSeq = sumOfSeq/2
 
-function podzielCiag(n) {
-  const S = (n * (n + 1)) / 2;
-
-  if (S % 2 !== 0) {
-      console.log("Nie można podzielić ciągu na dwie równe sumy.");
-      return;
+  if(sumOfSeq % 2){
+    console.log("Sum of sequence is not divisible by two")
+    return []
   }
 
-  const polowaS = S / 2;
-  let k = Math.floor((Math.sqrt(8 * polowaS + 1) - 1) / 2);
+  let set1 = [];
+  let set2 = [];
 
-  const pierwszaCzesc = [];
-  const drugaCzesc = [];
+  for(let i = n; i > 0; i--){
+    if(i!=n && i!=n-1){
 
-  for (let i = 1; i <= n; i++) {
-      if (i <= k) {
-          pierwszaCzesc.push(i);
-      } else {
-          drugaCzesc.push(i);
+      let set1Sum = set1.reduce((el, acc) => acc += el, 0); 
+      let set2Sum = set2.reduce((el, acc) => acc += el, 0); 
+      
+      if(set1Sum < set2Sum && (set1Sum + i) <= halfSumOfSeq){
+        set1.push(i);
+      }else{
+        set2.push(i);
       }
+
+
+
+    }else if(i  == n){
+      set2.push(i);
+    }else if(i == n-1){
+      set1.push(i);
+    }
   }
 
-  return [pierwszaCzesc, drugaCzesc];
+  return [set1,set2];
 }
+console.log(createTwoSetsOfEqualSum(8));
 
-const n = 8;
-const [pierwsza, druga] = podzielCiag(n);
 
-console.log("Pierwsza część:", pierwsza);
-console.log("Druga część:", druga);
-console.log("Druga część:", druga.reduce((el, acc) => acc += el));
-console.log("Pierwsza część:", pierwsza.reduce((el, acc) => acc += el));
+//Solution 2
+function createTwoSetsOfEqualSum2(n) {
+  // Divide the numbers 1,2,...,n into two sets/arrays of equal sum.
+  // If it's not possible, return [].
+
+  let sumOfSeq = (1+n)/2 * n
+
+  if(sumOfSeq % 2){
+    return []
+  }
+
+  let set1 = [];
+  let set2 = [];
+
+  let set1Sum = n;
+  let set2Sum = 0;
+  set1.push(n);
+
+  function reducer(num){
+
+    while(num > 0){
+      if(set1Sum < set2Sum){
+        sumOfSeq -= num;
+        set1Sum += num;
+        set1.push(num);
+      }else{
+        sumOfSeq -= num;
+        set2Sum += num;
+        set2.push(num);
+      }
+  
+      return reducer(num-1) 
+    }
+  }
+
+  reducer(n-1);
+
+  return [set1,set2];
+}
+console.log(createTwoSetsOfEqualSum2(8));
+
+
+//solution 3
+function createTwoSetsOfEqualSum3(n) {
+  // If the sum of all numbers from 1 to n are odd, return an empty array.
+  if ((n * (n+1) / 2) % 2 !== 0) return []
+  
+  // Initializing the result arrays
+  let [arr1, arr2] = [[], []];
+  
+  // Tracking the sum of each array
+  let sum1 = 0;
+  let sum2 = 0;
+
+  // Iterating the loop in reverse to start with the largest values
+  for (let i = n; i > 0; i--) {
+    // If sum1 is less than or equal to sum2
+    if (sum1 <= sum2) {
+      // Push the value to arr1
+      arr1.push(i);
+      // and increment the value of sum1
+      sum1 += i;
+    } else {
+      // Push the value to arr2
+      arr2.push(i);
+      // and increment the value of sum2
+      sum2 += i;
+    }
+  }
+  // or return the array if the values are equal
+  return [arr1, arr2];
+}
+console.log(createTwoSetsOfEqualSum3(8));
